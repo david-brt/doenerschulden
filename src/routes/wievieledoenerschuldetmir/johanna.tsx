@@ -3,8 +3,8 @@ import { Title } from "@solidjs/meta";
 export default function Home() {
   return (
     <main>
-      <Title>About</Title>
-      <h1>About</h1>
+      <Title>Johannas Dönerschulden</Title>
+      <h1>2</h1>
     </main>
   );
 }
