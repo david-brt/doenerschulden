@@ -1,8 +1,20 @@
-import { createSignal } from "solid-js";
+import { createEffect, createSignal } from "solid-js";
 import Counter from "./Counter";
 
 export default function BalanceCard(props: any) {
   const [balance, setBalance] = createSignal(props.count);
+
+  createEffect(() => {
+    props.setCards((cards: BalanceCard[]) => {
+      const name = props.name;
+      cards.forEach((card) => {
+        if (card.name !== name) return;
+        card.balance = balance();
+        return;
+      });
+      return [...cards];
+    });
+  });
 
   return (
     <span class="card-container">

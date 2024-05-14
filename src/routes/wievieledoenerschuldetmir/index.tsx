@@ -13,9 +13,8 @@ export default function Index() {
   });
 
   createEffect(() => {
-    const cardsString = localStorage.getItem("cards") || "";
+    const cardsString = localStorage.getItem("cards") || "[]";
     const cards = JSON.parse(cardsString);
-    console.log(cardsString);
     setBalanceCards(cards);
   });
 
@@ -31,16 +30,18 @@ export default function Index() {
   return (
     <div class="container">
       <h1>🥙-Schulden</h1>
-      <For each={balanceCards()}>
-        {(card: BalanceCard) => (
-          <BalanceCard
-            name={card.name}
-            count={card.balance}
-            setCards={setBalanceCards}
-            handleRemove={handleRemove}
-          ></BalanceCard>
-        )}
-      </For>
+      {balanceCards().length ? (
+        <For each={balanceCards()}>
+          {(card: BalanceCard) => (
+            <BalanceCard
+              name={card.name}
+              count={card.balance}
+              setCards={setBalanceCards}
+              handleRemove={handleRemove}
+            ></BalanceCard>
+          )}
+        </For>
+      ) : null}
       <AddBalanceCard
         setBalanceCards={setBalanceCards}
         balanceCards={balanceCards}

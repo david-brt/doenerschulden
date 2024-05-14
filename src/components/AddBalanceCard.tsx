@@ -1,4 +1,4 @@
-import { createEffect, createSignal } from "solid-js";
+import { createSignal } from "solid-js";
 import Counter from "./Counter";
 import "./BalanceCard.css";
 
@@ -15,15 +15,12 @@ export default function AddBalanceCard(props: any) {
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
     if (name().length < 2) return;
-    props.setBalanceCards((prev: any) => [
-      ...prev,
-      { name: name(), balance: count() },
-    ]);
+    props.setBalanceCards((cards: BalanceCard[]) => {
+      return [...cards, { name: name(), balance: count() }];
+    });
     setCount(1);
     setName("");
   };
-
-  createEffect(() => count());
 
   return (
     <div class="card-container">
