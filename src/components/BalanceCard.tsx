@@ -26,7 +26,7 @@ export default function BalanceCard(props: any) {
         </span>
         <button
           type="button"
-          onClick={props.handleRemove}
+          onClick={() => props.handleRemove(props.name)}
           class="submit-button"
         >
           ❌

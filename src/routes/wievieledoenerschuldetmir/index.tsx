@@ -7,23 +7,30 @@ export default function Index() {
   const [balanceCards, setBalanceCards] = createSignal([]);
 
   createEffect(() => {
-    const cards = balanceCards();
-    if (cards.length === 0) return;
-    localStorage.setItem("cards", JSON.stringify(balanceCards()));
-  });
-
-  createEffect(() => {
-    const cardsString = localStorage.getItem("cards") || "[]";
+    const cardsString = localStorage.getItem("cards");
+    if (!cardsString || cardsString.length === 0) return;
     const cards = JSON.parse(cardsString);
     setBalanceCards(cards);
   });
 
-  const handleRemove = () => {
+  createEffect(() => {
+    let cards = balanceCards();
+    if (cards.length === 0) {
+      const storedCardsString = localStorage.getItem("cards");
+      if (storedCardsString === null) return;
+      const storedCards = JSON.parse(storedCardsString);
+      console.log(storedCards);
+      if (storedCards.length === 1) {
+        localStorage.removeItem("cards");
+      }
+      return;
+    }
+    localStorage.setItem("cards", JSON.stringify(balanceCards()));
+  });
+
+  const handleRemove = (name: string) => {
     setBalanceCards((cards) => {
-      const newCards = [...cards];
-      if (newCards.length === 0) return newCards;
-      newCards.pop();
-      return newCards;
+      return cards.filter((card: BalanceCard) => card.name !== name);
     });
   };
 
