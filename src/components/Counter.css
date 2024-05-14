@@ -1,13 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
 .increment {
   font-family: inherit;
   font-size: inherit;
-  padding: 1em 2em;
-  color: #335d92;
+  padding: 0.5em;
   background-color: rgba(68, 107, 158, 0.1);
   border-radius: 2em;
   border: 2px solid rgba(68, 107, 158, 0);
+  color: #335d92;
   outline: none;
-  width: 200px;
   font-variant-numeric: tabular-nums;
 }
 

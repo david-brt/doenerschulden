@@ -1,11 +1,28 @@
-import { createSignal } from "solid-js";
+import { Accessor, JSX, type Setter } from "solid-js";
 import "./Counter.css";
 
-export default function Counter() {
-  const [count, setCount] = createSignal(0);
+type Props = {
+  setCount: Setter<number>;
+  count: Accessor<number>;
+};
+
+export default function Counter({ setCount, count }: Props) {
+  const increment = () => {
+    setCount((prev) => prev + 1);
+  };
+
+  const decrement = () => {
+    setCount((prev) => (prev > 0 ? prev - 1 : 0));
+  };
   return (
-    <button class="increment" onClick={() => setCount(count() + 1)}>
-      Clicks: {count()}
-    </button>
+    <span class="container">
+      <button type="button" class="increment" onClick={() => decrement()}>
+        -
+      </button>
+      {count()}
+      <button type="button" class="increment" onClick={() => increment()}>
+        +
+      </button>
+    </span>
   );
 }
