@@ -2,7 +2,7 @@ import { createEffect, createSignal } from "solid-js";
 import Counter from "./Counter";
 import "./BalanceCard.css";
 
-export default function AddBalanceCard({ setBalanceCards }: any) {
+export default function AddBalanceCard(props: any) {
   const [name, setName] = createSignal("");
   const [count, setCount] = createSignal(1);
 
@@ -15,7 +15,7 @@ export default function AddBalanceCard({ setBalanceCards }: any) {
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
     if (name().length < 2) return;
-    setBalanceCards((prev: any) => [
+    props.setBalanceCards((prev: any) => [
       ...prev,
       { name: name(), balance: count() },
     ]);
@@ -40,7 +40,9 @@ export default function AddBalanceCard({ setBalanceCards }: any) {
             maxlength={10}
             required
           ></input>
-          <span>schuldet mir auch noch</span>
+          <span>
+            schuldet mir {props.balanceCards().length !== 0 && "auch"} noch
+          </span>
           <Counter setCount={setCount} count={count}></Counter>
           <span>Döner!</span>
         </div>

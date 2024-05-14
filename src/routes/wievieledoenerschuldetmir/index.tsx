@@ -27,7 +27,10 @@ export default function Index() {
           ></BalanceCard>
         )}
       </For>
-      <AddBalanceCard setBalanceCards={setBalanceCards} />
+      <AddBalanceCard
+        setBalanceCards={setBalanceCards}
+        balanceCards={balanceCards}
+      />
     </div>
   );
 }
