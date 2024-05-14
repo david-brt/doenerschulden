@@ -14,7 +14,7 @@ export default function AddBalanceCard({ setBalanceCards }: any) {
 
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
-    if (name().length < 3) return;
+    if (name().length < 2) return;
     setBalanceCards((prev: any) => [
       ...prev,
       { name: name(), balance: count() },
@@ -27,7 +27,7 @@ export default function AddBalanceCard({ setBalanceCards }: any) {
 
   return (
     <div class="card-container">
-      <form class="form" onSubmit={(e) => handleSubmit(e)}>
+      <form class="card-flex" onSubmit={(e) => handleSubmit(e)}>
         <div class="card-inner">
           <input
             autofocus

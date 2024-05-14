@@ -43,7 +43,7 @@ input:focus,
   color: #c3d350;
 }
 
-.form {
+.card-flex {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -56,4 +56,11 @@ input:focus,
 
 .submit-button:active {
   background-color: rgba(68, 107, 158, 0.2);
+}
+
+.card-name {
+  border-radius: 0.6rem;
+  padding: 1rem;
+  color: hsl(234, 25%, 45%);
+  font-weight: 600;
 }
