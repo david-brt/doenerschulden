@@ -1,6 +1,7 @@
-.container {
+.counter-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5em;
 }
 
@@ -8,16 +9,21 @@
   font-family: inherit;
   font-size: inherit;
   padding: 0.5em;
-  background-color: rgba(68, 107, 158, 0.1);
-  border-radius: 2em;
-  border: 2px solid rgba(68, 107, 158, 0);
-  color: #335d92;
+  background-color: hsl(234, 25%, 45%, 1);
+  border-radius: 0.6rem;
+  border: 2px solid hsl(234, 25%, 45%, 0);
+  color: #fff;
   outline: none;
   font-variant-numeric: tabular-nums;
 }
 
+.increment:hover {
+  background-color: hsl(234, 25%, 45%, 0.7);
+  cursor: pointer;
+}
+
 .increment:focus {
-  border: 2px solid #335d92;
+  outline: 2px solid hsl(234, 25%, 80%);
 }
 
 .increment:active {

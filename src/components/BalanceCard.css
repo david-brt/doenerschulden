@@ -1,3 +1,59 @@
-.container {
+.card-container {
+  width: 70vw;
   display: flex;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background-color: hsla(234, 25%, 45%, 0.2);
+  padding: 1rem;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+input {
+  background-color: hsl(234, 25%, 45%);
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.75rem;
+  color: #fff;
+  box-sizing: border-box;
+  font-family: "Nunito";
+  font-size: 1.25rem;
+}
+
+input:focus,
+.submit-button:focus {
+  outline: 2px solid hsl(234, 25%, 80%);
+}
+
+::placeholder {
+  opacity: 1;
+  color: hsl(234, 25%, 80%, 0.5);
+}
+
+.submit-button {
+  padding: 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: hsl(234, 25%, 45%);
+  color: #c3d350;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-button:hover {
+  background-color: hsl(234, 25%, 45%, 0.7);
+  cursor: pointer;
+}
+
+.submit-button:active {
+  background-color: rgba(68, 107, 158, 0.2);
 }

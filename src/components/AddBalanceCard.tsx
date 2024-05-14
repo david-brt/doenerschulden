@@ -1,5 +1,6 @@
 import { createEffect, createSignal } from "solid-js";
 import Counter from "./Counter";
+import "./BalanceCard.css";
 
 export default function AddBalanceCard({ setBalanceCards }: any) {
   const [name, setName] = createSignal("");
@@ -19,24 +20,34 @@ export default function AddBalanceCard({ setBalanceCards }: any) {
       { name: name(), balance: count() },
     ]);
     setCount(1);
+    setName("");
   };
 
   createEffect(() => count());
 
   return (
-    <form class="container" onSubmit={(e) => handleSubmit(e)}>
-      <input
-        value={name()}
-        oninput={(e) => handleInput(e, e.target.value)}
-        class="input"
-        type="text"
-        minlength={3}
-        maxlength={10}
-        required
-      ></input>
-      <span>schuldet mir auch noch</span>
-      <Counter setCount={setCount} count={count}></Counter>
-      <span>Döner</span>
-    </form>
+    <div class="card-container">
+      <form class="form" onSubmit={(e) => handleSubmit(e)}>
+        <div class="card-inner">
+          <input
+            autofocus
+            placeholder="Name"
+            value={name()}
+            oninput={(e) => handleInput(e, e.target.value)}
+            class="input"
+            type="text"
+            minlength={3}
+            maxlength={10}
+            required
+          ></input>
+          <span>schuldet mir auch noch</span>
+          <Counter setCount={setCount} count={count}></Counter>
+          <span>Döner!</span>
+        </div>
+        <button type="submit" class="submit-button">
+          &check;
+        </button>
+      </form>
+    </div>
   );
 }

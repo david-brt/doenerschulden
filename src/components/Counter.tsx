@@ -1,4 +1,4 @@
-import { Accessor, JSX, type Setter } from "solid-js";
+import { Accessor, type Setter } from "solid-js";
 import "./Counter.css";
 
 type Props = {
@@ -12,10 +12,10 @@ export default function Counter({ setCount, count }: Props) {
   };
 
   const decrement = () => {
-    setCount((prev) => (prev > 0 ? prev - 1 : 0));
+    setCount((prev) => (prev > 1 ? prev - 1 : 1));
   };
   return (
-    <span class="container">
+    <span class="counter-container">
       <button type="button" class="increment" onClick={() => decrement()}>
         -
       </button>
