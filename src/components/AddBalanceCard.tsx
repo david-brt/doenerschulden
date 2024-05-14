@@ -14,9 +14,22 @@ export default function AddBalanceCard(props: any) {
 
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
-    if (name().length < 2) return;
+    const nameVal = name();
+    if (nameVal.length < 2) return;
     props.setBalanceCards((cards: BalanceCard[]) => {
-      return [...cards, { name: name(), balance: count() }];
+      const countVal = count();
+      let duplicate = false;
+      const res = cards.map((card) => {
+        if (card.name.toLowerCase() === nameVal.toLowerCase()) {
+          duplicate = true;
+          return { ...card, balance: card.balance + countVal };
+        }
+        return card;
+      });
+      if (!duplicate) {
+        res.push({ name: nameVal, balance: countVal });
+      }
+      return res;
     });
     setCount(1);
     setName("");
