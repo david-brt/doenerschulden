@@ -1,69 +1,51 @@
 {
-  "_HttpStatusCode-DjTx85av.js": {
-    "file": "assets/HttpStatusCode-DjTx85av.js",
-    "name": "HttpStatusCode"
-  },
-  "_index-CXFvkzmT.js": {
-    "file": "assets/index-CXFvkzmT.js",
-    "name": "index",
+  "_HttpStatusCode-ARU_DKtf.js": {
+    "file": "assets/HttpStatusCode-ARU_DKtf.js",
+    "name": "HttpStatusCode",
     "imports": [
-      "_web-4GLkNTJZ.js"
+      "_web-DcH7Vywb.js"
     ]
   },
-  "_web-4GLkNTJZ.js": {
-    "file": "assets/web-4GLkNTJZ.js",
+  "_web-DcH7Vywb.js": {
+    "file": "assets/web-DcH7Vywb.js",
     "name": "web"
   },
   "src/routes/[...404].tsx?pick=default&pick=$css": {
-    "file": "assets/_...404_-Vr_J9NBG.js",
+    "file": "assets/_...404_-Dft0WUTy.js",
     "name": "_...404_",
     "src": "src/routes/[...404].tsx?pick=default&pick=$css",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_web-4GLkNTJZ.js",
-      "_index-CXFvkzmT.js",
-      "_HttpStatusCode-DjTx85av.js"
+      "_web-DcH7Vywb.js",
+      "_HttpStatusCode-ARU_DKtf.js"
     ]
   },
   "src/routes/index.tsx?pick=default&pick=$css": {
-    "file": "assets/index-B2wIn520.js",
+    "file": "assets/index-BWu7HQkj.js",
     "name": "index",
     "src": "src/routes/index.tsx?pick=default&pick=$css",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_web-4GLkNTJZ.js"
+      "_web-DcH7Vywb.js"
     ],
     "css": [
       "assets/index-DBu-H_T7.css"
     ]
   },
-  "src/routes/johanna.tsx?pick=default&pick=$css": {
-    "file": "assets/johanna-D0wIM0Vd.js",
-    "name": "johanna",
-    "src": "src/routes/johanna.tsx?pick=default&pick=$css",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_web-4GLkNTJZ.js",
-      "_index-CXFvkzmT.js"
-    ]
-  },
   "virtual:#vinxi/handler/client": {
-    "file": "assets/client-DiWbauak.js",
+    "file": "assets/client-CPhKBuOT.js",
     "name": "client",
     "src": "virtual:#vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_index-CXFvkzmT.js",
-      "_web-4GLkNTJZ.js",
-      "_HttpStatusCode-DjTx85av.js"
+      "_HttpStatusCode-ARU_DKtf.js",
+      "_web-DcH7Vywb.js"
     ],
     "dynamicImports": [
       "src/routes/[...404].tsx?pick=default&pick=$css",
-      "src/routes/index.tsx?pick=default&pick=$css",
-      "src/routes/johanna.tsx?pick=default&pick=$css"
+      "src/routes/index.tsx?pick=default&pick=$css"
     ],
     "css": [
       "assets/client-PLFeV_2X.css"
