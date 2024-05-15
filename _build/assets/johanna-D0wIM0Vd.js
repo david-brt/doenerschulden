@@ -1,1 +1,0 @@
-import{n as a,B as i,t as l,h as o,x as s}from"./web-4GLkNTJZ.js";import{T as m}from"./index-CXFvkzmT.js";var h=s("<main><!$><!/><h1>2");function $(){return(()=>{var e=a(h),n=e.firstChild,[t,r]=i(n.nextSibling);return t.nextSibling,l(e,o(m,{children:"Johannas Dönerschulden"}),t,r),e})()}export{$ as default};
