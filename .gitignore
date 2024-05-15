@@ -1,11 +1,13 @@
 
 dist
 .solid
-.output
 .vercel
 .netlify
 netlify
 .vinxi
+
+.output/*
+!.output/public
 
 # Environment
 .env
