@@ -1,18 +1,13 @@
-.card-container {
+.card-container,
+.add-card-container {
   width: 70vw;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  grid-template-columns: auto auto auto auto 1fr;
+  gap: 1em;
   border-radius: 0.75rem;
   background-color: hsla(234, 25%, 45%, 0.2);
   padding: 1rem;
-}
-
-.card-inner {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  min-width: 0;
-  flex-wrap: wrap;
 }
 
 input {
@@ -43,14 +38,7 @@ input:focus,
   border: none;
   background-color: hsl(234, 25%, 45%);
   color: #c3d350;
-}
-
-.card-flex {
-  width: 100%;
-  display: flex;
-  gap: 1em;
-  align-items: center;
-  justify-content: space-between;
+  justify-self: end;
 }
 
 .submit-button:hover {
@@ -67,10 +55,66 @@ input:focus,
   padding: 1rem;
   color: hsl(234, 25%, 45%);
   font-weight: 600;
+  grid-column: 1 / span 2;
 }
 
 @media screen and (max-width: 1080px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .card-container,
+  .add-card-container {
+    width: 80vw;
+  }
+
+  .add-card-container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto auto auto 1fr;
+  }
+
   input {
-    flex: 0 0 100%;
+    width: 100%;
+    grid-column: 1 / span 5;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  input {
+    grid-column: 1 / span 3;
+  }
+
+  .card-container {
+    justify-items: left;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto auto auto;
+  }
+
+  .card-container .submit-button {
+    width: 100%;
+    grid-column: 1 / span 3;
+  }
+
+  .card-name {
+    grid-column: 1 / span 1;
+  }
+
+  .owes {
+    grid-column: 1 / span 3;
+  }
+
+  .kebab {
+    grid-column: 2 / span 2;
+  }
+
+  .add-card-container {
+    grid-template-rows: 1fr 0.5fr 1fr 1fr;
+    grid-template-columns: auto auto 1fr;
+    justify-items: left;
+  }
+
+  .add-card-container .submit-button {
+    width: 100%;
+    grid-column: 1 / span 3;
   }
 }

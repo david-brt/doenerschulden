@@ -36,30 +36,26 @@ export default function AddBalanceCard(props: any) {
   };
 
   return (
-    <div class="card-container">
-      <form class="card-flex" onSubmit={(e) => handleSubmit(e)}>
-        <div class="card-inner">
-          <input
-            autofocus
-            placeholder="Name"
-            value={name()}
-            oninput={(e) => handleInput(e, e.target.value)}
-            class="input"
-            type="text"
-            minlength={3}
-            maxlength={10}
-            required
-          ></input>
-          <span>
-            schuldet mir {props.balanceCards().length !== 0 && "auch"} noch
-          </span>
-          <Counter setCount={setCount} count={count}></Counter>
-          <span>Döner!</span>
-        </div>
-        <button type="submit" class="submit-button">
-          &check;
-        </button>
-      </form>
-    </div>
+    <form class="add-card-container" onSubmit={(e) => handleSubmit(e)}>
+      <input
+        autofocus
+        placeholder="Name"
+        value={name()}
+        oninput={(e) => handleInput(e, e.target.value)}
+        class="input"
+        type="text"
+        minlength={3}
+        maxlength={10}
+        required
+      ></input>
+      <span class="owes">
+        schuldet mir {props.balanceCards().length !== 0 && "auch"} noch
+      </span>
+      <Counter setCount={setCount} count={count}></Counter>
+      <span class="kebab">Döner!</span>
+      <button type="submit" class="submit-button">
+        &check;
+      </button>
+    </form>
   );
 }

@@ -17,21 +17,17 @@ export default function BalanceCard(props: any) {
   });
 
   return (
-    <span class="card-container">
-      <div class="card-flex">
-        <span class="card-inner">
-          <div class="card-name">{props.name}:</div>
-          <Counter setCount={setBalance} count={balance}></Counter>
-          Döner
-        </span>
-        <button
-          type="button"
-          onClick={() => props.handleRemove(props.name)}
-          class="submit-button"
-        >
-          ❌
-        </button>
-      </div>
-    </span>
+    <div class="card-container">
+      <div class="card-name">{props.name}:</div>
+      <Counter setCount={setBalance} count={balance}></Counter>
+      <span>Döner</span>
+      <button
+        type="button"
+        onClick={() => props.handleRemove(props.name)}
+        class="submit-button"
+      >
+        <span>❌</span>
+      </button>
+    </div>
   );
 }
